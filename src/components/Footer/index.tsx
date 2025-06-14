@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Fullscreen, FullscreenExit } from '@mui/icons-material'
-import { Typography } from '@mui/material'
+import { Divider, Typography } from '@mui/material'
 import './index.css'
 
 /**
@@ -13,6 +13,8 @@ export default function Footer(): React.JSX.Element {
 
   return (
     <footer>
+      <Divider className="divider" color="#636363" />
+
       <div className="footer-container">
         <Typography variant="body2" align="center">
           © {currentYear} - Feito por{' '}
