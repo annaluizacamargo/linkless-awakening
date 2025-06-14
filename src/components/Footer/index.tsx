@@ -18,7 +18,7 @@ export default function Footer(): React.JSX.Element {
       <div className="footer-container">
         <Typography variant="body2" align="center">
           © {currentYear} - Feito por{' '}
-          <a className="bold-text" href="https://www.linkedin.com/in/anna-luiza-camargo-fistarol/">
+          <a className="bold-text" href="https://www.linkedin.com/in/anna-luiza-camargo-fistarol/" target="_blank">
             Anna Luiza Fistarol
           </a>{' '}
         </Typography>
