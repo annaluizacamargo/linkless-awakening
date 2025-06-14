@@ -12,11 +12,17 @@
     "reinstall-deps-and-clear-cache": "rm -rf node_modules .vite dist && rm -rf node_modules/.vite && rm -f package-lock.json yarn.lock && npm install && npm cache clean --force"
   },
   "dependencies": {
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.0",
+    "@mui/icons-material": "7.1.1",
+    "@mui/material": "7.1.1",
+    "crypto-js": "4.2.0",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@eslint/js": "9.25.0",
+    "@types/crypto-js": "4.2.2",
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
     "@vitejs/plugin-react": "4.4.1",
