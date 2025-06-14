@@ -1,0 +1,53 @@
+/* Theme CSS for a web application*/
+:root {
+  --light-primary-main: #5e8cad;
+  --light-primary-light: #5e8cad;
+  --light-primary-dark: #336e97;
+  --light-primary-contrast-text: #e7e7e7;
+
+  --light-secondary-main: #9ac1dd;
+  --light-secondary-light: #a2c1d8;
+  --light-secondary-dark: #8aadc5;
+  --light-secondary-contrast-text: #e7e7e7;
+
+  --light-text-primary: #3d3d3d;
+  --light-text-secondary: #555555;
+  --light-text-disabled: #010221;
+
+  --light-background-default: #f0f0f0;
+  --light-background-paper: #f9f9f9;
+  --light-background-secondary: #c2c2c2;
+
+  --light-action-active: #555555;
+  --light-action-hover: #7e8f9b5a;
+  --light-action-selected: #5e8cad;
+
+  --dark-primary-main: #5e8cad;
+  --dark-primary-light: #6298be;
+  --dark-primary-dark: #336e97;
+  --dark-primary-contrast-text: #1f1f1f;
+
+  --dark-secondary-main: #1c3a4f;
+  --dark-secondary-light: #214864;
+  --dark-secondary-dark: #222f38;
+  --dark-secondary-contrast-text: #1f1f1f;
+
+  --dark-text-primary: #e7e7e7;
+  --dark-text-secondary: #b3b3b3;
+  --dark-text-disabled: #9e9e9e;
+
+  --dark-background-default: #1f1f1f;
+  --dark-background-paper: #1a1a1a;
+  --dark-background-secondary: #101010;
+
+  --dark-action-active: #e0e0e0;
+  --dark-action-hover: #174978;
+  --dark-action-selected: #75a2bf;
+
+  --pie-chart-color-1: #75a2bf;
+  --pie-chart-color-2: #ff5d5d;
+
+  --alert-color: #ff5d5d;
+  --dark-success-color: #93bf75;
+  --light-success-color: #567243;
+}
