@@ -13,7 +13,7 @@ export default function Footer(): React.JSX.Element {
 
   return (
     <footer>
-      <Divider className="divider" color="#636363" />
+      <Divider className="divider" color="#212732" />
 
       <div className="footer-container">
         <Typography variant="body2" align="center">
