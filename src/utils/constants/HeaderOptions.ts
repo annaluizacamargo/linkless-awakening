@@ -11,7 +11,7 @@ export const HeaderOptions: HeaderOptionsType = {
     },
     {
       label: 'Arena de Batalha',
-      path: '/batalha',
+      path: '/batalhas',
       icon: '⚔️',
     },
   ],
