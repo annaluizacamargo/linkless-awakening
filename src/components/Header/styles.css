@@ -31,6 +31,10 @@
   margin: 1rem auto;
   gap: 1.5rem;
   min-width: max-content;
+
+  &.mobile {
+    display: none;
+  }
 }
 
 .site-header-link {
@@ -57,5 +61,44 @@
     color: #608548;
     font-weight: 700 !important;
     padding: 0;
+  }
+}
+
+/* media query for mobile */
+@media (max-width: 768px) {
+  .site-header {
+    width: 100%;
+  }
+
+  .site-header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1.5rem 0 3rem;
+  }
+
+  .logo {
+    height: 2rem;
+    padding-right: 0.5rem;
+  }
+
+  .site-header-container {
+    width: fit-content !important;
+    border-left: 2px solid #212732;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    margin: 0.5rem 0 !important;
+    padding: 0.75rem 1.5rem !important;
+
+    &.mobile {
+      display: flex;
+    }
+
+    &.desktop {
+      display: none;
+    }
   }
 }

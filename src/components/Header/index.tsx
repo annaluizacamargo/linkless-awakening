@@ -15,12 +15,12 @@ import './styles.css'
 export default function Header(): React.JSX.Element {
   return (
     <header className="site-header">
-      <Box>
+      <Box className="site-header-content">
         <Link href="/">
           <img src={GoldLogo} alt="Linkless Awakening Logo" className="logo" height={4} />
         </Link>
 
-        <Container className="site-header-container">
+        <Container className="site-header-container desktop">
           {HeaderOptions.links.map((link: HeaderLink, index: number) => (
             <React.Fragment key={stringToMd5(link.path + 'section')}>
               <Link
@@ -31,6 +31,31 @@ export default function Header(): React.JSX.Element {
                 className={HeaderOptions.getLinkClass(link.path)}
               >
                 {link.icon} {link.label}
+              </Link>
+
+              {index < HeaderOptions.links.length - 1 && (
+                <Divider
+                  orientation="vertical"
+                  flexItem
+                  sx={{ backgroundColor: '#212732', width: '2px' }}
+                  key={stringToMd5('divider' + index)}
+                />
+              )}
+            </React.Fragment>
+          ))}
+        </Container>
+
+        <Container className="site-header-container mobile">
+          {HeaderOptions.links.map((link: HeaderLink, index: number) => (
+            <React.Fragment key={stringToMd5(link.path + 'section')}>
+              <Link
+                key={stringToMd5(index + link.path)}
+                href={link.path}
+                color="inherit"
+                underline="none"
+                className={HeaderOptions.getLinkClass(link.path)}
+              >
+                {link.icon}
               </Link>
 
               {index < HeaderOptions.links.length - 1 && (
