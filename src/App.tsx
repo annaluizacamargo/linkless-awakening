@@ -1,9 +1,9 @@
 import { Box, Container } from '@mui/material'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import GoldLogo from '@assets/logo/linkless-awakening-logo-gold.svg'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import NotFoundPage from '@pages/pagina-nao-encontrada'
+import Header from '@components/Header'
+import Footer from '@components/Footer'
+import NotFoundPage from '@pages/404'
 import './App.css'
 
 /**
