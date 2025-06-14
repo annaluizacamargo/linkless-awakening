@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #002919;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,26 +13,113 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  width: 100%;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 100% !important;
+  height: 100vh;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+}
+
+.bold-text {
+  font-weight: 600;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  position: relative;
+}
+
+.background-box {
+  background-image: url('@assets/background/island-background.jpg');
+  background-color: #212732;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.background-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 0, 0, 0.6), transparent), #05070ade;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* media query for mobile */
+@media (max-width: 768px) {
+  .button-back {
+    margin: 0 auto !important;
+  }
+
+  h1,
+  .MuiTypography-h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2,
+  .MuiTypography-h2 {
+    font-size: 1.6rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h3,
+  .MuiTypography-h3 {
+    font-size: 1.45rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h4,
+  .MuiTypography-h4 {
+    font-size: 1.3rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h5,
+  .MuiTypography-h5 {
+    font-size: 1.15rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h6,
+  .MuiTypography-h6 {
+    font-size: 1rem !important;
+    line-height: 1.2 !important;
+  }
+
+  p {
+    font-size: 0.9rem !important;
+    line-height: 1.2 !important;
+  }
 }
 
 button {
@@ -52,17 +139,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
