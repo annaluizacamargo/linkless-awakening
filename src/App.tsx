@@ -2,10 +2,9 @@ import { Box, Container } from '@mui/material'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
-import NotFoundPage from '@pages/404'
 import MonstersForm from '@pages/cadastro'
 import BattleArena from '@pages/batalhas'
-import './App.css'
+import NotFoundPage from '@pages/404'
 
 /**
  * Linkless Awakening App
@@ -17,7 +16,7 @@ export default function App() {
       <div className="app">
         <Header />
 
-        <Container className="main-container" maxWidth="lg">
+        <Container className="main-container">
           <Routes>
             <Route path="/" element={<MonstersForm />} /> {/* Default route to MonstersForm [Monsters registration] */}
             <Route path="/cadastro" element={<MonstersForm />} /> {/* Monsters registration page */}
