@@ -47,6 +47,7 @@ export default function MonsterForm({
   const cost = getMonsterCost(form)
   const costExceeded = !isMonsterCostValidAgainstCostValue(cost)
   const maxCost = StatWeight.max
+  const mockNames = mockMonstersApiReturn.map((m) => m.name)
 
   const sectionTitle = readOnly
     ? '👀 Visualizar Criatura'
@@ -86,6 +87,10 @@ export default function MonsterForm({
     }
   }
 
+  function isMockMonster(monster: IMonster): boolean {
+    return mockNames.includes(monster.name)
+  }
+
   return (
     <Box className="monster-form">
       <Typography variant="h5" className="bold-text">
@@ -120,13 +125,15 @@ export default function MonsterForm({
               slotProps={{ htmlInput: { maxLength: 32 } }}
             />
 
-            <TextField
-              label="URL da Imagem"
-              value={form.image_url}
-              onChange={(e) => handleFormChange('image_url', e.target.value)}
-              fullWidth
-              disabled={readOnly}
-            />
+            {!isMockMonster(form) && (
+              <TextField
+                label="URL da Imagem"
+                value={form.image_url}
+                onChange={(e) => handleFormChange('image_url', e.target.value)}
+                fullWidth
+                disabled={readOnly}
+              />
+            )}
           </Box>
 
           <img
@@ -171,14 +178,14 @@ export default function MonsterForm({
               </Box>
 
               <StyledRating
-                value={Number(form[field.id]) / 10}
+                value={Number(form[field.id]) / (StatWeight.max / 10)}
                 max={10}
                 precision={0.5}
                 icon={field.icon}
                 emptyIcon={field.emptyIcon}
                 onChange={(_, newValue) => {
                   if (!readOnly && typeof newValue === 'number') {
-                    handleFormChange(field.id, Math.round(newValue * 10))
+                    handleFormChange(field.id, Math.round(newValue * (StatWeight.max / 10)))
                   }
                 }}
                 readOnly={readOnly}

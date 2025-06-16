@@ -1,4 +1,10 @@
 import { IMonster } from '@utils/types/monster.types'
+import octorokImg from '@assets/monsters/octorok.png'
+import spinyImg from '@assets/monsters/spiny.png'
+import blooperImg from '@assets/monsters/blooper.png'
+import evilEagleImg from '@assets/monsters/evil_eagle.png'
+import polsVoiceImg from '@assets/monsters/pols_voice.png'
+import seaUrchinImg from '@assets/monsters/sea_urchin.png'
 
 /**
  * This file provides a mock return value for the Monsters API, simulating a list of monsters.
@@ -6,50 +12,50 @@ import { IMonster } from '@utils/types/monster.types'
 export const mockMonstersApiReturn: IMonster[] = [
   {
     name: 'Octorok',
-    attack: 22,
-    defense: 18,
-    speed: 17,
-    hp: 61,
-    image_url: 'https://linkless-awakening-game.vercel.app/assets/monsters/octorok.png',
+    attack: 44,
+    defense: 32,
+    speed: 34,
+    hp: 130,
+    image_url: octorokImg,
   },
   {
     name: 'Spiny',
-    attack: 15,
-    defense: 27,
-    speed: 10,
-    hp: 75,
-    image_url: 'https://linkless-awakening-game.vercel.app/assets/monsters/spiny.png',
+    attack: 30,
+    defense: 54,
+    speed: 20,
+    hp: 150,
+    image_url: spinyImg,
   },
   {
     name: 'Blooper',
-    attack: 27,
-    defense: 14,
-    speed: 14,
-    hp: 70,
-    image_url: 'https://linkless-awakening-game.vercel.app/assets/monsters/blooper.png',
+    attack: 54,
+    defense: 28,
+    speed: 28,
+    hp: 140,
+    image_url: blooperImg,
   },
   {
     name: 'Evil Eagle',
-    attack: 22,
-    defense: 12,
-    speed: 24,
-    hp: 55,
-    image_url: 'https://linkless-awakening-game.vercel.app/assets/monsters/evil_eagle.png',
+    attack: 44,
+    defense: 24,
+    speed: 48,
+    hp: 110,
+    image_url: evilEagleImg,
   },
   {
     name: 'Pols Voice',
-    attack: 19,
-    defense: 13,
-    speed: 28,
-    hp: 46,
-    image_url: 'https://linkless-awakening-game.vercel.app/assets/monsters/pols_voice.png',
+    attack: 38,
+    defense: 26,
+    speed: 56,
+    hp: 92,
+    image_url: polsVoiceImg,
   },
   {
     name: 'Sea Urchin',
-    attack: 12,
-    defense: 20,
-    speed: 22,
-    hp: 62,
-    image_url: 'https://linkless-awakening-game.vercel.app/assets/monsters/sea_urchin.png',
+    attack: 48,
+    defense: 40,
+    speed: 88,
+    hp: 100,
+    image_url: seaUrchinImg,
   },
 ]
