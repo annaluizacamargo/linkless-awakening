@@ -1,4 +1,4 @@
-import { IMonster } from 'https://linkless-awakening-game.vercel.app/src/utils/types/monster.types'
+import { IMonster } from '@utils/types/monster.types'
 
 /**
  * This file provides a mock return value for the Monsters API, simulating a list of monsters.
