@@ -16,19 +16,45 @@ export default function BattleArena() {
   const [selected, setSelected] = useState<(number | null)[]>([null, null])
   const [battle, setBattle] = useState<IBattleResult | null>(null)
   const [showResult, setShowResult] = useState(false)
-  const selected0 = selected[0]
-  const selected1 = selected[1]
 
   useEffect(() => {
     setMonsters(getAllMonsters())
   }, [])
 
+  // Load last battle from localStorage if available and monsters are loaded
   useEffect(() => {
-    setShowResult(false)
-    setBattle(null)
-  }, [selected0, selected1])
+    if (monsters.length > 0) {
+      const last = localStorage.getItem('lastBattle')
+
+      if (last) {
+        try {
+          const { monsterA, monsterB } = JSON.parse(last)
+          const idxA = monsters.findIndex((m) => m.name === monsterA.name)
+          const idxB = monsters.findIndex((m) => m.name === monsterB.name)
+
+          if (idxA !== -1 && idxB !== -1 && idxA !== idxB) {
+            setSelected([idxA, idxB])
+
+            const mA = monsters[idxA]
+            const mB = monsters[idxB]
+
+            const result = calculateBattle(mA, mB)
+
+            setBattle(result)
+            setShowResult(true)
+          }
+        } catch {
+          console.error('Failed to parse last battle data from localStorage:', last)
+          localStorage.removeItem('lastBattle') // Clear invalid data
+        }
+      }
+    }
+  }, [monsters])
 
   const handleSelect = (index: number) => {
+    setShowResult(false)
+    setBattle(null)
+
     if (selected[0] === index) {
       setSelected([null, selected[1]])
     } else if (selected[1] === index) {
