@@ -64,6 +64,22 @@ export default function BattleArenaPanel({
                 <Typography variant="subtitle1" sx={{ mt: 1, color: '#fff' }} className="bold-text">
                   {monsters[selected[side]!].name}
                 </Typography>
+
+                <Typography variant="body2" sx={{ color: '#bfa046' }} className="bold-text">
+                  Ataque: {monsters[selected[side]!].attack}
+                </Typography>
+
+                <Typography variant="body2" sx={{ color: '#bfa046' }} className="bold-text">
+                  Defesa: {monsters[selected[side]!].defense}
+                </Typography>
+
+                <Typography variant="body2" sx={{ color: '#bfa046' }} className="bold-text">
+                  Vida: {monsters[selected[side]!].hp}
+                </Typography>
+
+                <Typography variant="body2" sx={{ color: '#bfa046' }} className="bold-text">
+                  Velocidade: {monsters[selected[side]!].speed}
+                </Typography>
               </>
             ) : (
               <>

@@ -26,7 +26,7 @@ export default function BattleArenaGrid({
         Selecione dois participantes para batalhar!
       </Typography>
 
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{ justifyContent: 'center' }}>
         {monsters.map((monster, index) => {
           const borderColor = selected[0] === index ? '#f44336' : selected[1] === index ? '#2196f3' : 'transparent'
           const boxShadow = selected[0] === index || selected[1] === index ? `0 0 0 3px ${borderColor}88` : 'none'

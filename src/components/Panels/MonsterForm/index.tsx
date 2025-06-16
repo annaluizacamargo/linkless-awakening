@@ -119,7 +119,7 @@ export default function MonsterForm({
       </Tooltip>
 
       <form onSubmit={handleSubmit} autoComplete="off" className="monster-form-fields">
-        <Box sx={{ display: 'flex', flexDirection: 'row', gap: 3, alignItems: 'center' }}>
+        <Box className="monster-form-field-name-image">
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', width: '100%' }}>
             <TextField
               required
@@ -176,7 +176,7 @@ export default function MonsterForm({
                   onChange={(e) => {
                     handleFormChange(field.id, Number(e.target.value) || 0)
                   }}
-                  slotProps={{ htmlInput: { max: 100, min: 0, maxLength: 32 } }}
+                  slotProps={{ htmlInput: { max: StatWeight.max, min: 0, maxLength: 32 } }}
                   size="small"
                   disabled={readOnly}
                   sx={{ width: '3.5rem' }}
@@ -195,7 +195,8 @@ export default function MonsterForm({
                   }
                 }}
                 readOnly={readOnly}
-                sx={{ width: '100%', justifyContent: 'space-between' }}
+                sx={{ width: '100%', gap: '0.25rem' }}
+                className="monster-form-rating"
               />
             </Box>
           )

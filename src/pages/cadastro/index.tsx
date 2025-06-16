@@ -80,7 +80,7 @@ export default function MonstersForm(): React.JSX.Element {
 
   return (
     <Box className="monsters-form-page">
-      <Box sx={{ flex: 1, padding: '2rem' }}>
+      <Box className="grid-monsters-form-page" sx={{ flex: 1 }}>
         <MonsterGrid
           allMonsters={allMonsters}
           selectedIndex={selectedIndex}
