@@ -13,9 +13,9 @@ export const mockMonstersApiReturn: IMonster[] = [
   {
     name: 'Octorok',
     attack: 44,
-    defense: 32,
+    defense: 36,
     speed: 34,
-    hp: 130,
+    hp: 122,
     image_url: octorokImg,
   },
   {
