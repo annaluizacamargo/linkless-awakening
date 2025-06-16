@@ -52,10 +52,10 @@ export const mockMonstersApiReturn: IMonster[] = [
   },
   {
     name: 'Sea Urchin',
-    attack: 48,
+    attack: 24,
     defense: 40,
-    speed: 88,
-    hp: 100,
+    speed: 44,
+    hp: 124,
     image_url: seaUrchinImg,
   },
 ]
