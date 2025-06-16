@@ -1,11 +1,11 @@
 .monsters-form-page {
   display: flex;
   align-items: flex-start;
-  background: #05070a96;
+  background: var(--background-tertiary);
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 0 0.5rem rgba(88, 88, 88, 0.473);
-  border: 2px solid #212732;
+  box-shadow: var(--box-shadow-default);
+  border: 2px solid var(--background-default);
   max-width: 90%;
 
   /* Responsive adjustments */

@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #05070a96;
+  background: var(--background-tertiary);
   border-radius: 0;
-  box-shadow: 0 0 0.5rem rgba(88, 88, 88, 0.473);
+  box-shadow: var(--box-shadow-default);
   flex: 1;
   min-width: 28rem;
   max-width: 100%;
@@ -28,13 +28,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--neutral-100);
   transition: background 0.2s, box-shadow 0.2s;
 }
 
 button.fight-button {
-  background-color: #bfa046;
-  color: #131313;
+  background-color: var(--golden-color-main);
+  color: var(--neutral-900);
   padding: 0.5rem 1.5rem;
   border-radius: 8px;
   border: none;
@@ -42,8 +42,8 @@ button.fight-button {
   font-weight: bold;
 
   &:disabled {
-    background-color: #3a3a3a !important;
-    color: #888 !important;
+    background-color: var(--neutral-700) !important;
+    color: var(--neutral-600) !important;
   }
 }
 
@@ -52,12 +52,12 @@ button.fight-button {
   flex-direction: column;
   align-items: center;
   border-radius: 0;
-  box-shadow: 0 0 0.5rem rgba(88, 88, 88, 0.473);
+  box-shadow: var(--box-shadow-default);
   padding: 2rem 0;
   width: 100%;
   max-width: 100%;
-  background: #05070a96 !important;
-  border-top: 2px solid #212732;
+  background: var(--background-tertiary) !important;
+  border-top: 2px solid var(--background-default);
 }
 
 .battle-results {
@@ -77,7 +77,7 @@ button.fight-button {
 .battle-results-stats {
   margin-top: 2rem;
   padding: 2rem 0;
-  border-top: 2px solid #212732;
+  border-top: 2px solid var(--background-default);
   display: flex;
   flex-direction: column;
   align-items: center;

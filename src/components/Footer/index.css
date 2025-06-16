@@ -9,7 +9,7 @@ footer {
 }
 
 footer .footer-container {
-  background: #05070a96;
+  background: var(--background-tertiary);
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #bfa046;
+  color: var(--golden-color-main);
 }
 
 footer button.fullscreen-button {

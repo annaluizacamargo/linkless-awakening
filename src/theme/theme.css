@@ -1,0 +1,53 @@
+/* Theme CSS for application */
+:root {
+  --neutral-100: #ffffff;
+  --neutral-200: #e7e7e7;
+  --neutral-300: #d0d0d0;
+  --neutral-400: #b9b9b9;
+  --neutral-500: #a0a0a0;
+  --neutral-600: #888888;
+  --neutral-700: #3a3a3a;
+  --neutral-800: #585858;
+  --neutral-900: #131313;
+  --neutral-1000: #0006;
+
+  --background-default: #212732;
+  --background-secondary: #222;
+  --background-tertiary: #05070a96;
+  --background-quaternary: #05070ab2;
+  --background-quinary: #181a22cc;
+  --background-senary: #05070ab0;
+
+  --golden-color-main: #bfa046;
+  --golden-color-light: #ffe9b0;
+  --golden-color-dark: #a57c2b;
+  --golden-color-hover: #bfa04622;
+
+  --red-color-main: #f44336;
+  --red-color-light: #ff7961;
+  --red-color-dark: #d50000;
+  --red-color-hover: #3a2323;
+
+  --blue-color-main: #2196f3;
+  --blue-color-light: #64b5f6;
+  --blue-color-dark: #1976d2;
+  --blue-color-darker: #23272f;
+
+  --green-color-main: #4caf50;
+  --green-color-light: #75bf81;
+  --green-color-lighter: #b9f5a7;
+  --green-color-dark: #608548;
+  --green-color-hover: #23303a;
+
+  --box-shadow-default: 0 0 0.5rem rgba(88, 88, 88, 0.473);
+  --text-shadow-default: 0 2px 8px #000a;
+
+  --attack-color: #ff5722;
+  --attack-color-hover: #ff572290;
+  --defense-color: #1e88e5;
+  --defense-color-hover: #1e88e590;
+  --speed-color: #57b169;
+  --speed-color-hover: #57b16990;
+  --hp-color: #ff2d2e;
+  --hp-color-hover: #ff2d2d90;
+}

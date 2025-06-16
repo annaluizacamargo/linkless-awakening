@@ -3,7 +3,7 @@
   cursor: pointer;
   transition: border 0.2s;
   text-align: center;
-  background: #222 !important;
+  background: var(--background-secondary) !important;
   position: relative;
   width: 5rem;
   height: 8rem;
@@ -11,7 +11,7 @@
 }
 
 .monster-name {
-  color: #ffe9b0;
+  color: var(--golden-color-light);
   font-weight: 700;
   display: -webkit-box;
   overflow: hidden;

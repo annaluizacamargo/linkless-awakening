@@ -35,7 +35,7 @@ export const MonsterInfoCard = ({
     <Paper
       className="monster-info-card"
       sx={{
-        border: selectedIndex === index && readOnly ? '2px solid #bfa046' : '2px solid transparent',
+        border: selectedIndex === index && readOnly ? '2px solid var(--golden-color-main)' : '2px solid transparent',
       }}
       onClick={() => {
         if (setSelectedIndex) {
@@ -75,9 +75,9 @@ export const MonsterInfoCard = ({
             position: 'absolute',
             top: 4,
             right: 4,
-            color: '#bfa046',
-            background: '#181818',
-            '&:hover': { background: '#bfa04622' },
+            color: 'var(--golden-color-main)',
+            background: 'var(--neutral-900)',
+            '&:hover': { background: 'var(--golden-color-hover)' },
           }}
           onClick={(e) => {
             e.stopPropagation()

@@ -30,7 +30,7 @@ export default function BattleArenaPanel({
 }): React.JSX.Element {
   return (
     <Box className="battle-arena-panel">
-      <Typography variant="h5" className="bold-text" sx={{ color: '#ffe9b0' }}>
+      <Typography variant="h5" className="bold-text" sx={{ color: 'var(--golden-color-light)' }}>
         Criaturas escollhidas
       </Typography>
 
@@ -44,9 +44,9 @@ export default function BattleArenaPanel({
               background:
                 selected[side] !== null
                   ? side === 0
-                    ? 'linear-gradient(135deg, #3a2323 60%, #f44336 100%)'
-                    : 'linear-gradient(135deg, #23303a 60%, #2196f3 100%)'
-                  : '#23272f',
+                    ? 'linear-gradient(135deg, var(--red-color-hover) 60%, var(--red-color-main) 100%)'
+                    : 'linear-gradient(135deg, var(--green-color-hover) 60%, var(--blue-color-main) 100%)'
+                  : 'var(--blue-color-darker)',
             }}
           >
             {selected[side] !== null ? (
@@ -61,33 +61,33 @@ export default function BattleArenaPanel({
                   canEdit={false}
                 />
 
-                <Typography variant="subtitle1" sx={{ mt: 1, color: '#fff' }} className="bold-text">
+                <Typography variant="subtitle1" sx={{ mt: 1, color: 'var(--neutral-100)' }} className="bold-text">
                   {monsters[selected[side]!].name}
                 </Typography>
 
-                <Typography variant="body2" sx={{ color: '#bfa046' }} className="bold-text">
+                <Typography variant="body2" sx={{ color: 'var(--golden-color-main)' }} className="bold-text">
                   Ataque: {monsters[selected[side]!].attack}
                 </Typography>
 
-                <Typography variant="body2" sx={{ color: '#bfa046' }} className="bold-text">
+                <Typography variant="body2" sx={{ color: 'var(--golden-color-main)' }} className="bold-text">
                   Defesa: {monsters[selected[side]!].defense}
                 </Typography>
 
-                <Typography variant="body2" sx={{ color: '#bfa046' }} className="bold-text">
+                <Typography variant="body2" sx={{ color: 'var(--golden-color-main)' }} className="bold-text">
                   Vida: {monsters[selected[side]!].hp}
                 </Typography>
 
-                <Typography variant="body2" sx={{ color: '#bfa046' }} className="bold-text">
+                <Typography variant="body2" sx={{ color: 'var(--golden-color-main)' }} className="bold-text">
                   Velocidade: {monsters[selected[side]!].speed}
                 </Typography>
               </>
             ) : (
               <>
-                <Typography variant="body2" sx={{ color: '#bfa046' }} className="bold-text">
+                <Typography variant="body2" sx={{ color: 'var(--golden-color-main)' }} className="bold-text">
                   Selecione o
                 </Typography>
 
-                <Typography variant="body2" sx={{ color: '#bfa046' }} className="bold-text">
+                <Typography variant="body2" sx={{ color: 'var(--golden-color-main)' }} className="bold-text">
                   {side === 0 ? 'participante 1' : 'participante 2'}
                 </Typography>
               </>

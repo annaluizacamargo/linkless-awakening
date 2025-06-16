@@ -53,7 +53,7 @@ export default function MonsterGrid({
             alignItems: 'center',
             justifyContent: 'center',
             height: '100%',
-            background: '#222',
+            background: 'var(--background-secondary)',
             width: '6.25rem',
             minHeight: '6.25rem',
           }}
@@ -64,7 +64,7 @@ export default function MonsterGrid({
               <AddCircle
                 fontSize="inherit"
                 sx={{
-                  color: '#bfa046',
+                  color: 'var(--golden-color-main)',
                   bottom: 16,
                   right: 16,
                   height: '100%',

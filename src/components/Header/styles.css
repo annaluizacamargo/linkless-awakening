@@ -20,11 +20,11 @@ header.site-header {
 }
 
 .site-header-container {
-  background: #05070ab2;
+  background: var(--background-quaternary);
   border-radius: 1.25rem;
   padding: 1rem 2.5rem !important;
-  box-shadow: 0 0 0.5rem rgba(88, 88, 88, 0.473);
-  border: 2px solid #212732;
+  box-shadow: var(--box-shadow-default);
+  border: 2px solid var(--background-default);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,7 +39,7 @@ header.site-header {
 }
 
 .site-header-link {
-  color: #e7e7e7;
+  color: var(--neutral-200);
   text-decoration: none;
   font-weight: 600 !important;
   font-size: 0.875rem !important;
@@ -52,14 +52,14 @@ header.site-header {
   padding: 0 1px;
 
   &:hover {
-    color: #75bf81;
+    color: var(--green-color-light);
     font-weight: 700 !important;
     padding: 0;
   }
 
   &:active,
   &.active {
-    color: #608548;
+    color: var(--green-color-dark);
     font-weight: 700 !important;
     padding: 0;
   }
@@ -87,7 +87,7 @@ header.site-header {
 
   .site-header-container {
     width: fit-content !important;
-    border-left: 2px solid #212732;
+    border-left: 2px solid var(--background-default);
     background-color: transparent;
     box-shadow: none;
     border: none;

@@ -19,8 +19,8 @@ export const RatingFields: IRatingFields[] = [
     label: 'Dano do Ataque',
     icon: <LocalFireDepartment fontSize="inherit" />,
     emptyIcon: <LocalFireDepartmentOutlined fontSize="inherit" />,
-    color: '#FF5722',
-    colorHover: '#FF572290',
+    color: 'var(--attack-color)',
+    colorHover: 'var(--attack-color-hover)',
     article: 'o',
   },
   {
@@ -28,8 +28,8 @@ export const RatingFields: IRatingFields[] = [
     label: 'Defesa',
     icon: <LocalPolice fontSize="inherit" />,
     emptyIcon: <ShieldOutlined fontSize="inherit" />,
-    color: '#1E88E5',
-    colorHover: '#1E88E590',
+    color: 'var(--defense-color)',
+    colorHover: 'var(--defense-color-hover)',
     article: 'a',
   },
   {
@@ -37,8 +37,9 @@ export const RatingFields: IRatingFields[] = [
     label: 'Velocidade',
     icon: <Rocket fontSize="inherit" />,
     emptyIcon: <RocketOutlined fontSize="inherit" />,
-    color: '#57B169',
-    colorHover: '#57B16990',
+
+    color: 'var(--speed-color)',
+    colorHover: 'var(--speed-color-hover)',
     article: 'a',
   },
   {
@@ -46,8 +47,9 @@ export const RatingFields: IRatingFields[] = [
     label: 'HP',
     icon: <Favorite fontSize="inherit" />,
     emptyIcon: <FavoriteOutlined fontSize="inherit" />,
-    color: '#FF2D2E',
-    colorHover: '#ff2d2d90',
+
+    color: 'var(--hp-color)',
+    colorHover: 'var(--hp-color-hover)',
     article: 'o',
   },
 ]

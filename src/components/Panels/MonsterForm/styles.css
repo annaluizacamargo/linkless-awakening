@@ -15,7 +15,7 @@
   @media (max-width: 1087px) {
     min-width: 90%;
     max-width: 90%;
-    border-top: 2px solid #212732;
+    border-top: 2px solid var(--background-default);
     border-radius: 0;
   }
 
@@ -33,14 +33,14 @@
   max-width: 100%;
 
   label {
-    color: #fff;
+    color: var(--neutral-100);
   }
 
   input {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 2px solid #212732;
-    color: #fff;
+    border: 2px solid var(--background-default);
+    color: var(--neutral-100);
     padding: 0.75rem;
   }
 
@@ -139,8 +139,8 @@
 }
 
 button.monster-form-submit-button {
-  background-color: #608548;
-  color: #fff;
+  background-color: var(--green-color-dark);
+  color: var(--neutral-100);
   padding: 0.5rem 1.5rem;
   border-radius: 8px;
   border: none;
@@ -148,20 +148,20 @@ button.monster-form-submit-button {
   font-weight: bold;
 
   &:disabled {
-    background-color: #3a3a3a !important;
-    color: #888 !important;
+    background-color: var(--neutral-700) !important;
+    color: var(--neutral-800) !important;
   }
 }
 
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border-color: #608548 !important;
+  border-color: var(--green-color-dark) !important;
 }
 
 .MuiInputLabel-formControl.Mui-focused {
-  color: #608548 !important;
+  color: var(--green-color-dark) !important;
 }
 
 .Mui-disabled {
-  color: #bdbdbd !important;
-  -webkit-text-fill-color: #bdbdbd !important;
+  color: var(--neutral-400) !important;
+  -webkit-text-fill-color: var(--neutral-400) !important;
 }

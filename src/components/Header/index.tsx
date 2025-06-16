@@ -37,7 +37,7 @@ export default function Header(): React.JSX.Element {
                 <Divider
                   orientation="vertical"
                   flexItem
-                  sx={{ backgroundColor: '#212732', width: '2px' }}
+                  sx={{ backgroundColor: 'var(--background-default)', width: '2px' }}
                   key={stringToMd5('divider' + index)}
                 />
               )}
@@ -62,7 +62,7 @@ export default function Header(): React.JSX.Element {
                 <Divider
                   orientation="vertical"
                   flexItem
-                  sx={{ backgroundColor: '#212732', width: '2px' }}
+                  sx={{ backgroundColor: 'var(--background-default)', width: '2px' }}
                   key={stringToMd5('divider' + index)}
                 />
               )}

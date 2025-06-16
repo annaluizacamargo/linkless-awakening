@@ -23,7 +23,7 @@
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
       "@store/*": ["src/store/*"],
-      "@styles/*": ["src/styles/*"],
+      "@theme/*": ["src/theme/*"],
       "@types/*": ["src/types/*"],
       "@pages/*": ["src/pages/*"]
     }

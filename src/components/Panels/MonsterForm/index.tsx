@@ -106,7 +106,7 @@ export default function MonsterForm({
       <Tooltip title={getTotalCostText(maxCost)}>
         <Typography
           sx={{
-            color: costExceeded ? '#D50000' : '#bfa046',
+            color: costExceeded ? 'var(--red-color-dark)' : 'var(--golden-color-main)',
             fontWeight: 700,
             mb: 2,
             textAlign: 'center',

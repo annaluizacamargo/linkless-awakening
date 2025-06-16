@@ -22,13 +22,18 @@ export default function BattleArenaGrid({
         Arena de Batalha
       </Typography>
 
-      <Typography align="center" sx={{ mb: 3, color: '#bfa046', fontWeight: 500 }}>
+      <Typography align="center" sx={{ mb: 3, color: 'var(--golden-color-main)', fontWeight: 500 }}>
         Selecione dois participantes para batalhar!
       </Typography>
 
       <Grid container spacing={2} sx={{ justifyContent: 'center' }}>
         {monsters.map((monster, index) => {
-          const borderColor = selected[0] === index ? '#f44336' : selected[1] === index ? '#2196f3' : 'transparent'
+          const borderColor =
+            selected[0] === index
+              ? 'var(--red-color-main)'
+              : selected[1] === index
+              ? 'var(--blue-color-main)'
+              : 'transparent'
           const boxShadow = selected[0] === index || selected[1] === index ? `0 0 0 3px ${borderColor}88` : 'none'
 
           return (

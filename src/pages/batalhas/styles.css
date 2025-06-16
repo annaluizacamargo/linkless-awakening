@@ -1,10 +1,10 @@
 .battle-arena-page {
   display: flex;
   align-items: stretch;
-  background: #05070a96;
+  background: var(--background-tertiary);
   border-radius: 1rem;
-  box-shadow: 0 0 0.5rem rgba(88, 88, 88, 0.473);
-  border: 2px solid #212732;
+  box-shadow: var(--box-shadow-default);
+  border: 2px solid var(--background-default);
   max-width: 90%;
 
   /* Responsive adjustments */
@@ -32,12 +32,12 @@
   flex: 2;
   flex-direction: column;
   gap: 0.25rem;
-  padding: 2rem;
+  padding: 2rem !important;
 
   h4 {
-    color: #ffe9b0;
+    color: var(--golden-color-light);
     font-weight: 900;
-    text-shadow: 0 2px 8px #000a;
+    text-shadow: var(--text-shadow-default);
   }
 
   /* Responsive adjustments */
