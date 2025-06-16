@@ -1,119 +1,176 @@
-# linkless-awakening
+# 🐦‍🔥 Linkless Awakening - Batalha de Monstros
 
-# Desafio técnico Revi
+> Linkless Awakening é uma aplicação React + TypeScript que permite batalhas entre monstros, inspirado no clássico 🧝‍♀️🧝‍♂️ Zelda - Link's Awakening.
 
-Bem vindo ao desafio técnico da Revi, se você chegou até aqui é porque vimos um potencial em você fazer parte do nosso time. 🔎
+## 🗃️ Índice
 
-Queremos revolucionar a forma como as empresas interagem com os clientes no Brasil! Para isso, precisamos de pessoas excepcionais e que tenham essa mesma vontade! 🚀
-
-Criamos esse desafio com o objetivo de avaliar as suas capacidades técnicas e de resolução de problemas, leia todos os pontos atentamente e caso surja alguma dúvida, não hesite em nos chamar 💫
-
-Espero que goste
-
-## Batalha de monstros
-
-A aplicação é uma batalha de monstros, onde temos diferentes monstros com diferentes estatísticas, como ataque e defesa, por exemplo, e podemos deixá-los lutar entre si.
-
-### Objetivos 🎯
-
-- Implementar as seguintes funcionalidades:
-    - cadastrar um monstro com as seguintes informações
-        - `name` - string
-        - `attack` - int
-        - `defense` - int
-        - `speed` - int
-        - `hp` - int
-        - `image_url` - string
-    - criar uma batalha entre dois monstros
-    - visualizar o resultado da batalha automaticamente, após o fim da batalha
+- [📝 Introdução](#introducao)
+- [📚 Documentação](#documentacao)
+- [🎯 Objetivo](#objetivo)
+- [🛠 Tecnologias Utilizadas](#tecnologias)
+- [✨ Funcionalidades](#funcionalidades)
+- [⏩ Instruções para execução do projeto](#instrucoes)
+- [⚙️ Configuração Inicial](#configuracao-inicial)
+- [🚀 Execução do Projeto](#execucao-do-projeto)
+- [🧪 Testes](#testes)
+- [📁 Arquivos Importantes](#arquivos-importantes)
+- [📝 Considerações Adicionais](#consideracoes-adicionais)
+- [📄 Licença](#licenca)
 
 ---
 
-### Algoritmo de Batalha 🤖
+<h3 id="introducao">📝 Introdução</h3>
 
-Para calcular o algoritmo de batalha, leve em conta o fluxo abaixo:
+**🧙‍♂️ Linkless Awakening** é uma aplicação que simula batalhas entre monstros, permitindo que usuários criem e gerenciem seus próprios monstros utilizando apenas o front-end.
 
-- O monstro com a maior velocidade faz o primeiro ataque; se ambas as velocidades forem iguais, o monstro com o maior ataque vai primeiro.
-- Para calcular o dano (`damage`), subtraia a defesa do ataque (`atack - defense`); a diferença é o dano; se o ataque for igual ou menor que a defesa, o dano é 1.
-- Subtraia o dano do `hp` do monstro que sofreu o ataque (`hp = hp - damage`).
-- Os monstros batalharão em rounds até que um vença; todos os rounds devem ser calculados de uma vez só
-- Quem vence a batalha é o monstro que subtraiu o `hp` do inimigo a zero primeiro
-
----
-
-### Observações 📝
-
-- A aplicação deve ser construída em React Js (utilizando typescript)
-- NÃO é necessário a construção de um backend
-- NÃO é necessário a criação de testes automatizados
-- É permitido o uso de libs externas
+- **🧝‍♀️ Inspirado no clássico Zelda - Link's Awakening**, o projeto foi desenvolvido como um desafio técnico, utilizando React e TypeScript. Como a autora gosta muito do jogo Link's Awakening decidiu misturar um pouco de magia ao código e trazer um universo sem o Link, com uma batalha de monstros.
+- **🎮 Batalhas de Monstros**: Os usuários podem criar monstros com atributos personalizados e batalhar entre si, visualizando o resultado e a evolução dos HPs em um gráfico.
+- **💾 Persistência Local**: Todos os monstros criados e a última batalha são salvos no navegador, permitindo que os usuários continuem de onde pararam.
+- **🖥 Interface Responsiva**: O layout é adaptado para desktop e mobile, com um visual escuro.
+- Tudo foi construído buscando o melhor resultado possível dentro do tempo estipulado para o desafio (3 dias), com foco na qualidade do código, boas práticas e uma experiência de usuário agradável.
 
 ---
 
-### O que será avaliado? ⭐️
+<h3 id="documentacao">📚 Documentações</h3>
 
-- Qualidade de código e uso de boas práticas
-    - É muito mais fácil e satisfatório trabalhar com um código fácil de ler e entender
-- Noções de UI/UX
-    - Também gostamos de telas pretas, mas nossos clientes ainda não sabem usar o terminal 🙁. Por isso um design elegante e fácil conta pontos (relaxa, sabemos que você não é um designer)
-- Criatividade
-    - Valorizamos pessoas que busquem resolver problemas da melhor forma possível (eu disse melhor, não mais complexa!)
-- Documentação
-    - Readme com instruções claras sobre como rodar a aplicação
+- 📖 [Documentação do Projeto (Notion)](https://flying-date-6d7.notion.site/Linkless-Awakening-Documenta-o-T-cnica-2145728f68a78085b166fa69c17a14f3)
+- 📘 Documentação oficial da linguagem:
+  - [React.js 🔗](https://react.dev/)
+  - [Vite 🔗](https://vite.dev/)
+  - [Mui design 🔗](https://mui.com/)
+- 🤖 [Repositório no GitHub](https://github.com/annaluizacamargo/linkless-awakening)
+- 🔗 LinkedIn da autora: [Anna Luiza Camargo](https://www.linkedin.com/in/anna-luiza-camargo-fistarol/)
 
+---
 
+<h3 id="objetivo">🎯 Objetivo</h3>
 
-# React + TypeScript + Vite
+- 🎮 Desenvolver uma aplicação que permita batalhas entre monstros, com foco na experiência do usuário e na qualidade do código em **três dias**.
+- 🧩 Criar uma interface intuitiva e responsiva, utilizando React e TypeScript.
+- 🛠 Implementar funcionalidades de cadastro, edição e exclusão de monstros, além de batalhas com resultados detalhados.
+- 📘 Seguir as regras de batalha:
+  - O monstro com maior velocidade ataca primeiro.
+  - Se houver empate de velocidade, o monstro com maior ataque ataca primeiro.
+  - O dano é calculado como: ataque do atacante - defesa do defensor (mínimo 1).
+  - O HP do defensor é reduzido pelo dano a cada round.
+  - Os rounds continuam até o HP de um monstro chegar a zero.
+  - **🏆 O vencedor é o monstro que sobreviver 🏆**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+<h3 id="tecnologias">🛠 Tecnologias Utilizadas</h3>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛️ **ReactJS** + **TypeScript**
+- 🎨 **MUI (Material UI)** para uma interface responsiva e moderna
 
-## Expanding the ESLint configuration
+> 📦 Utilização mínima de bibliotecas externas. Dependências podem ser verificadas em `package.json`.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+<h3 id="funcionalidades"> ✨ Funcionalidades</h3>
+
+- **Cadastro de Monstros:**  
+  Crie monstros personalizados informando nome, ataque, defesa, velocidade, HP e imagem.
+- **Lista de Monstros:**  
+  Visualize todos os monstros cadastrados e alguns monstros mock já disponíveis.
+- **Edição e Exclusão:**  
+  Edite ou exclua monstros criados por você.
+- **Batalha de Monstros:**  
+  Selecione dois monstros para batalhar. Veja o resultado, logs detalhados dos rounds e a evolução dos HPs em um gráfico.
+- **Persistência Local:**  
+  Todos os monstros criados e a última batalha ficam salvos no seu navegador.
+- **Interface Responsiva:**  
+  Layout adaptado para desktop e mobile, com visual escuro.
+
+---
+
+<h3 id="instrucoes">⏩ Instruções para execução do projeto</h3>
+
+- Para rodar localmente, você precisa ter as dependências instaladas no seu ambiente, principalmente o **npm** em seu ambiente de trabalho.
+
+---
+
+<h3 id="configuracao-inicial">⚙️ Configuração Inicial</h3>
+
+- Esse repositório não possui **variáveis de ambiente**.
+- O projeto não depende de um backend, portanto não há necessidade de configuração adicional.
+- Todos os dados são salvos no **localStorage** do navegador.
+
+---
+
+<h3 id="execucao-do-projeto">🚀 Execução do Projeto</h3>
+
+#### 🛠 Pré-requisitos
+
+- Clonar o repositório do GitHub:
+
+```bash
+git clone https://github.com/annaluizacamargo/linkless-awakening.git
+cd linkless-awakening
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+#### 📦 Instalação
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+#### 🚀 Executando o Projeto
+
+##### 🧪 Ambiente de Desenvolvimento
+
+```bash
+npm run dev
+```
+
+- **Acesse via**: http://localhost:5173/
+
+##### 🌍 Ambiente de Produção
+
+```bash
+npm run reinstall-deps
+npm run build
+npm run preview
+```
+
+- **Visualização em**: http://localhost:4173/
+
+---
+
+<h3 id="testes">🧪️ Testes</h3>
+
+- O projeto foi desenvolvido e testado no navegador Chrome do desktop (Ubuntu 22.04) e no Android.
+- Testes no código ainda não implementados.
+
+---
+
+<h3 id="arquivos-importantes">📁 Arquivos Importantes</h3>
+
+- É possível alterar alguns valores dinâmicos do projeto através dos arquivos abaixo:
+- 📂 src/utils/mocks/MonstersApiReturn.ts
+  - Mock de retorno da API de monstros
+- 📂 src/utils/constants/StatWeight.ts
+  - Pesos dos atributos dos monstros que influenciam na criação da criatura
+
+---
+
+<h3 id="consideracoes-adicionais">📝 Considerações Adicionais</h3>
+
+- As decisões foram tomadas com foco na 🕒 entrega rápida, 🎯 experiência do usuário e 🧩 independência do front-end, possibilitando atualizações 📡 futuras com integração a um possível back-end.
+  -💡 Melhorias Futuras
+  - Animações de batalha
+  - Ranking de monstros
+  - Compartilhamento de batalhas
+  - Upload de imagens personalizadas
+
+---
+
+<h3 id="licenca">📄 Licença</h3>
+
+- Este projeto é apenas para fins de avaliação técnica.
+
+---
+
+</br>
+
+> Feito com carinho 💜
