@@ -1,4 +1,4 @@
-import { IMonster } from '@utils/types/monster.type'
+import { IMonster } from '@utils/types/monster.types'
 
 export const MONSTERS_KEY = 'monsters'
 
