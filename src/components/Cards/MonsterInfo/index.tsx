@@ -1,5 +1,6 @@
 import { Edit as EditIcon } from '@mui/icons-material'
 import { Typography, Paper, IconButton, Box } from '@mui/material'
+import { mockMonstersApiReturn } from '@utils/mocks/MonstersApiReturn'
 import './styles.css'
 
 /**
@@ -48,9 +49,18 @@ export const MonsterInfoCard = ({
     >
       <Box className="monster-image-container">
         <img
-          src={monster.image_url || `https://placehold.co/80x80?text=${monster.name}`}
+          src={
+            monster.image_url && monster.image_url.trim() !== ''
+              ? monster.image_url
+              : `https://placehold.co/80x80?text=${encodeURIComponent(monster.name)}`
+          }
           alt={monster.name}
           className="smart-image"
+          onError={(e) => {
+            const target = e.currentTarget
+            target.onerror = null
+            target.src = `https://placehold.co/80x80?text=${encodeURIComponent(monster.name)}`
+          }}
         />
       </Box>
 
@@ -58,7 +68,7 @@ export const MonsterInfoCard = ({
         {monster.name}
       </Typography>
 
-      {canEdit && index >= mockMonsters.length && (
+      {canEdit && setEditingIndex && setSelectedIndex && setReadOnly && index >= mockMonsters.length && (
         <IconButton
           size="small"
           sx={{
@@ -71,18 +81,9 @@ export const MonsterInfoCard = ({
           }}
           onClick={(e) => {
             e.stopPropagation()
-
-            if (setSelectedIndex) {
-              setSelectedIndex(null)
-            }
-
-            if (setEditingIndex) {
-              setEditingIndex(index - mockMonsters.length)
-            }
-
-            if (setReadOnly) {
-              setReadOnly(false)
-            }
+            setSelectedIndex(index ?? null)
+            setEditingIndex((index ?? 0) - mockMonstersApiReturn.length)
+            setReadOnly(false)
           }}
           aria-label="Editar"
         >

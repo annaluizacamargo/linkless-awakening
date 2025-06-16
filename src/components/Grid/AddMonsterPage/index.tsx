@@ -25,7 +25,7 @@ export default function MonsterGrid({
 }): React.JSX.Element {
   return (
     <Grid container spacing={2}>
-      {allMonsters.map((monster, index) => (
+      {allMonsters?.map((monster, index) => (
         <Grid key={stringToMd5(monster.name + index)}>
           <MonsterInfoCard
             monster={monster}

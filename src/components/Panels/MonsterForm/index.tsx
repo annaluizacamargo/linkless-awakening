@@ -10,6 +10,7 @@ import {
   getTotalCostText,
   isMonsterCostValid,
   isMonsterCostValidAgainstCostValue,
+  validateNameUniqueness,
 } from '@utils/helpers/MonsterCost.helper'
 import { mockMonstersApiReturn } from '@utils/mocks/MonstersApiReturn'
 
@@ -33,6 +34,7 @@ export default function MonsterForm({
   setSelectedIndex,
   setEditingIndex,
   setReadOnly,
+  resetForm,
 }: {
   form: IMonster
   handleFormChange: (field: keyof IMonster, value: string | number) => void
@@ -43,8 +45,9 @@ export default function MonsterForm({
   setSelectedIndex: (index: number | null) => void
   setEditingIndex: (index: number | null) => void
   setReadOnly: (readOnly: boolean) => void
+  resetForm: () => void
 }): React.JSX.Element {
-  const cost = getMonsterCost(form)
+  const cost = form ? getMonsterCost(form) : 0
   const costExceeded = !isMonsterCostValidAgainstCostValue(cost)
   const maxCost = StatWeight.max
   const mockNames = mockMonstersApiReturn.map((m) => m.name)
@@ -56,16 +59,18 @@ export default function MonsterForm({
     : '🐦‍🔥 Adicionar Criatura'
 
   const getPlaceholder = (name: string) =>
-    `https://placehold.co/120x120?text=${encodeURIComponent(name && name.trim() !== '' ? name : 'Imagem da Criatura')}`
+    `https://placehold.co/120x120?text=${encodeURIComponent(name?.trim() || 'Imagem')}`
 
-  const imageSrc = form.image_url && form.image_url.trim() !== '' ? form.image_url : getPlaceholder(form.name)
+  const imageSrc = form?.image_url && form.image_url.trim() !== '' ? form.image_url : getPlaceholder(form.name)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (!form.name.trim()) {
-      alert('O nome da criatura é obrigatório.')
-      throw new Error('O nome da criatura é obrigatório.')
-    }
+
+    validateNameUniqueness({
+      form,
+      userMonsters,
+      editingIndex,
+    })
 
     if (!isMonsterCostValid(form)) {
       alert('O custo total da criatura excede o máximo permitido.')
@@ -77,6 +82,7 @@ export default function MonsterForm({
       setSelectedIndex(null)
       setEditingIndex(null)
       setReadOnly(false)
+      resetForm()
     } else {
       const updated = userMonsters.slice()
       updated[editingIndex] = form
@@ -166,14 +172,14 @@ export default function MonsterForm({
 
                 <TextField
                   type="number"
-                  value={form[field.id]}
+                  value={form[field.id] || 0}
                   onChange={(e) => {
                     handleFormChange(field.id, Number(e.target.value) || 0)
                   }}
                   slotProps={{ htmlInput: { max: 100, min: 0, maxLength: 32 } }}
                   size="small"
                   disabled={readOnly}
-                  color="primary"
+                  sx={{ width: '3.5rem' }}
                 />
               </Box>
 
@@ -217,6 +223,25 @@ export default function MonsterForm({
               </Button>
             </span>
           </Tooltip>
+        )}
+
+        {editingIndex !== null && !readOnly && (
+          <Button
+            variant="outlined"
+            color="error"
+            fullWidth
+            sx={{ fontWeight: 700, mt: 1, borderRadius: 2 }}
+            onClick={() => {
+              const updated = userMonsters.slice()
+              updated.splice(editingIndex, 1)
+              setUserMonsters(updated)
+              setSelectedIndex(null)
+              setEditingIndex(null)
+              setReadOnly(false)
+            }}
+          >
+            Excluir
+          </Button>
         )}
       </form>
     </Box>
