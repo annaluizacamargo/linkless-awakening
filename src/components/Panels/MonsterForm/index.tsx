@@ -2,7 +2,7 @@ import { Box, Button, InputLabel, Rating, styled, TextField, Tooltip, Typography
 import { RatingFields } from '@utils/constants/RatingFields'
 import { StatWeight } from '@utils/constants/StatWeight'
 import { stringToMd5 } from '@utils/helpers/String.helper'
-import { IMonster } from '@utils/types/monster.type'
+import { IMonster } from '@utils/types/monster.types'
 import './styles.css'
 import {
   getMonsterCost,
@@ -88,7 +88,7 @@ export default function MonsterForm({
 
   return (
     <Box className="monster-form">
-      <Typography variant="h5" className="bold-text ">
+      <Typography variant="h5" className="bold-text">
         {sectionTitle}
       </Typography>
 

@@ -4,11 +4,11 @@
   gap: 0.25rem;
   padding: 1rem;
   border-radius: 8px;
-  flex: '0 0 21.25rem';
-  background: '#181818';
+  flex: 0 0 22rem;
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
+  min-width: 24rem;
 }
 
 .monster-form-fields {
