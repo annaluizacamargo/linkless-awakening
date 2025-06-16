@@ -3,7 +3,7 @@
   cursor: pointer;
   transition: border 0.2s;
   text-align: center;
-  background: #222;
+  background: #222 !important;
   position: relative;
   width: 5rem;
   height: 8rem;
@@ -21,6 +21,9 @@
   line-clamp: 2;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  font-weight: 600 !important;
+  margin-top: 0.5rem !important;
+  font-size: 0.75rem !important;
 }
 
 .monster-image-container {

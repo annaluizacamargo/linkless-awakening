@@ -15,6 +15,7 @@ export const MonsterInfoCard = ({
   setEditingIndex,
   mockMonsters = [],
   setReadOnly,
+  canEdit = true,
 }: {
   monster: {
     name: string
@@ -22,11 +23,12 @@ export const MonsterInfoCard = ({
   }
   index: number
   selectedIndex: number | null
-  setSelectedIndex: (index: number | null) => void
+  setSelectedIndex?: (index: number | null) => void
   readOnly: boolean
-  setEditingIndex: (index: number | null) => void
-  mockMonsters?: { name: string; image_url?: string }[]
-  setReadOnly: (readOnly: boolean) => void
+  setEditingIndex?: (index: number | null) => void
+  mockMonsters: { name: string; image_url?: string }[]
+  setReadOnly?: (readOnly: boolean) => void
+  canEdit?: boolean
 }) => {
   return (
     <Paper
@@ -35,8 +37,13 @@ export const MonsterInfoCard = ({
         border: selectedIndex === index && readOnly ? '2px solid #bfa046' : '2px solid transparent',
       }}
       onClick={() => {
-        setSelectedIndex(index)
-        setEditingIndex(null)
+        if (setSelectedIndex) {
+          setSelectedIndex(index)
+        }
+
+        if (setEditingIndex) {
+          setEditingIndex(null)
+        }
       }}
     >
       <Box className="monster-image-container">
@@ -51,7 +58,7 @@ export const MonsterInfoCard = ({
         {monster.name}
       </Typography>
 
-      {index >= mockMonsters.length && (
+      {canEdit && index >= mockMonsters.length && (
         <IconButton
           size="small"
           sx={{
@@ -64,9 +71,18 @@ export const MonsterInfoCard = ({
           }}
           onClick={(e) => {
             e.stopPropagation()
-            setEditingIndex(index - mockMonsters.length)
-            setSelectedIndex(null)
-            setReadOnly(false)
+
+            if (setSelectedIndex) {
+              setSelectedIndex(null)
+            }
+
+            if (setEditingIndex) {
+              setEditingIndex(index - mockMonsters.length)
+            }
+
+            if (setReadOnly) {
+              setReadOnly(false)
+            }
           }}
           aria-label="Editar"
         >
