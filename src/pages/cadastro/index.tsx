@@ -2,11 +2,11 @@ import { Box } from '@mui/material'
 import { DefaultMonster, MONSTERS_KEY } from '@utils/constants/Monsters'
 import { mockMonstersApiReturn } from '@utils/mocks/MonstersApiReturn'
 import { IMonster } from '@utils/types/monster.types'
-import { useEffect, useState } from 'react'
+import { getLocalStorageMonsters } from '@utils/helpers/MonsterCost.helper'
+import React, { useEffect, useState } from 'react'
 import MonsterGrid from '@components/Grid/AddMonsterPage'
 import MonsterForm from '@components/Panels/MonsterForm'
 import './styles.css'
-import { getLocalStorageMonsters } from '@utils/helpers/MonsterCost.helper'
 
 /**
  * MonstersForm Page Component
@@ -33,33 +33,30 @@ export default function MonstersForm(): React.JSX.Element {
     }
   }, [userMonsters, loaded])
 
-  // Update form when selectedIndex changes
+  // Update form state based on selected index and editing state
   useEffect(() => {
+    const isEditing = editingIndex !== null
+
     if (selectedIndex !== null) {
-      if (selectedIndex < mockMonstersApiReturn.length) {
-        setForm(mockMonstersApiReturn[selectedIndex])
-        setReadOnly(true)
-        setEditingIndex(null)
-      } else {
-        const userIdx = selectedIndex - mockMonstersApiReturn.length
+      const isMock = selectedIndex < mockMonstersApiReturn.length
+      const userIdx = selectedIndex - mockMonstersApiReturn.length
+
+      if (isEditing) {
         setForm(userMonsters[userIdx])
-        setReadOnly(true)
-        setEditingIndex(null)
+        return setReadOnly(false)
+      } else if (isMock) {
+        setForm(mockMonstersApiReturn[selectedIndex])
+        return setReadOnly(true)
+      } else {
+        setForm(userMonsters[userIdx])
+        return setReadOnly(true)
       }
     } else {
       setForm(DefaultMonster)
       setReadOnly(false)
       setEditingIndex(null)
     }
-  }, [selectedIndex, userMonsters])
-
-  // Update form when editingIndex changes
-  useEffect(() => {
-    if (editingIndex !== null) {
-      setForm(userMonsters[editingIndex])
-      setReadOnly(false)
-    }
-  }, [editingIndex, userMonsters])
+  }, [selectedIndex, userMonsters, editingIndex])
 
   const handleFormChange = (field: keyof IMonster, value: string | number) => {
     setForm((prev) => ({
@@ -73,6 +70,10 @@ export default function MonstersForm(): React.JSX.Element {
     setForm(DefaultMonster)
     setReadOnly(false)
     setEditingIndex(null)
+  }
+
+  const resetForm = () => {
+    setForm(DefaultMonster)
   }
 
   const allMonsters = [...mockMonstersApiReturn, ...userMonsters]
@@ -90,17 +91,51 @@ export default function MonstersForm(): React.JSX.Element {
         />
       </Box>
 
-      <MonsterForm
-        form={form}
-        handleFormChange={handleFormChange}
-        editingIndex={editingIndex}
-        readOnly={readOnly}
-        userMonsters={userMonsters}
-        setUserMonsters={setUserMonsters}
-        setEditingIndex={setEditingIndex}
-        setReadOnly={setReadOnly}
-        setSelectedIndex={setSelectedIndex}
-      />
+      <ErrorBoundary>
+        {form && (
+          <MonsterForm
+            form={form}
+            handleFormChange={handleFormChange}
+            editingIndex={editingIndex}
+            readOnly={readOnly}
+            userMonsters={userMonsters}
+            setUserMonsters={setUserMonsters}
+            setEditingIndex={setEditingIndex}
+            setReadOnly={setReadOnly}
+            setSelectedIndex={setSelectedIndex}
+            resetForm={resetForm}
+          />
+        )}
+      </ErrorBoundary>
     </Box>
   )
+}
+
+interface ErrorBoundaryProps {
+  children: React.ReactNode
+}
+
+class ErrorBoundary extends React.Component<ErrorBoundaryProps> {
+  state = { hasError: false }
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <Box className="monster-form">
+          <h2>Ocorreu um erro ao exibir o formulário do monstro.</h2>
+          <p>
+            Por favor, tente novamente mais tarde ou tente limpar o cache do seu navegador. Se o problema persistir,
+            entre em contato{' '}
+            <a className="bold-text" href="https://www.linkedin.com/in/anna-luiza-camargo-fistarol/" target="_blank">
+              comigo
+            </a>{' '}
+            :)
+          </p>
+        </Box>
+      )
+    }
+    return this.props.children
+  }
 }
