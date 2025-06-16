@@ -9,7 +9,7 @@ footer {
 }
 
 footer .footer-container {
-  background-color: #05070a;
+  background: #05070a96;
   font-weight: 500;
   display: flex;
   align-items: center;
