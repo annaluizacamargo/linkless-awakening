@@ -55,10 +55,15 @@ body {
   overflow-y: auto;
   width: 100%;
   max-width: 100% !important;
-  padding: 1.5rem 3rem 4rem !important;
+  padding: 1.5rem 0.75rem 4rem !important;
   box-sizing: border-box;
   margin: 9.5rem 0 0;
   position: relative;
+
+  /* media query for tablet and mobile */
+  @media (max-width: 542px) {
+    margin-top: 5rem;
+  }
 }
 
 .background-box {
@@ -86,7 +91,7 @@ body {
   z-index: 0;
 }
 
-/* media query for mobile */
+/* media query for tablet and mobile */
 @media (max-width: 768px) {
   .button-back {
     margin: 0 auto !important;

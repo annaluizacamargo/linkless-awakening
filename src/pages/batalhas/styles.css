@@ -1,23 +1,47 @@
 .battle-arena-page {
-    display: flex;
-    align-items: flex-start;
-    background: #05070a96;
-    border-radius: 1rem;
-    box-shadow: 0 0 0.5rem rgba(88, 88, 88, 0.473);
-    border: 2px solid #212732;
-    max-width: 90%;
+  display: flex;
+  align-items: stretch;
+  background: #05070a96;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem rgba(88, 88, 88, 0.473);
+  border: 2px solid #212732;
+  max-width: 90%;
+
+  /* Responsive adjustments */
+  @media (max-width: 1087px) {
+    max-width: calc(100% - 2rem);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1047px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* media query for mobile */
+  @media (max-width: 468px) {
+    min-width: calc(100% - 1rem);
+    max-width: calc(100% - 1rem);
+    width: calc(100% - 1rem);
+    padding: 2rem 0 0;
+  }
 }
 
 .arena-container {
-    display: flex;
-    flex: 2;
-    flex-direction: column;
-    gap: 0.25rem;
-    padding: 2rem;
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 2rem;
 
-    h4 {
-        color: #ffe9b0;
-        font-weight: 900;
-        text-shadow: 0 2px 8px #000a;
-    }
+  h4 {
+    color: #ffe9b0;
+    font-weight: 900;
+    text-shadow: 0 2px 8px #000a;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1087px) {
+    padding: 0 1rem 2rem;
+  }
 }

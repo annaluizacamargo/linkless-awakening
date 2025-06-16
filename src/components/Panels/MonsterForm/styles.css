@@ -2,19 +2,35 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding: 1rem;
   border-radius: 8px;
   flex: 0 0 22rem;
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
-  min-width: 26rem;
+  min-width: 18rem;
+  max-width: 18rem;
+  align-items: center;
+
+  /* Responsive adjustments */
+  @media (max-width: 1087px) {
+    min-width: 90%;
+    max-width: 90%;
+    border-top: 2px solid #212732;
+    border-radius: 0;
+  }
+
+  /* media query for mobile */
+  @media (max-width: 468px) {
+    min-width: calc(100% - 2rem);
+    max-width: calc(100% - 2rem);
+  }
 }
 
 .monster-form-fields {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  max-width: 100%;
 
   label {
     color: #fff;
@@ -33,25 +49,92 @@
     flex-direction: row;
     gap: 0.5rem;
     align-items: center;
+
+    /* media query for mobile */
+    @media (max-width: 468px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   .monster-form-field-label {
     display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    width: 100%;
-    align-items: center;
+    flex-direction: column;
+    width: 8rem;
+    align-items: flex-start;
 
     label {
       width: fit-content;
       min-width: fit-content;
       text-align: left;
+      width: 8rem !important;
+    }
+
+    .MuiFormControl-root {
+      width: 100%;
     }
 
     input {
-      padding: 0;
-      border: none;
+      padding: 0.25rem;
+      text-align: center;
     }
+
+    @media (max-width: 1087px) {
+      width: 100%;
+    }
+
+    /* media query for mobile */
+    @media (max-width: 468px) {
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+
+      .MuiFormControl-root {
+        width: 5rem;
+      }
+    }
+  }
+
+  @media (max-width: 1087px) {
+    width: 80% !important;
+  }
+}
+
+.monster-form-rating {
+  width: 8.5rem !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 1087px) {
+    width: 100% !important;
+  }
+}
+
+.monster-form-field-name-image {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+
+  /* Responsive adjustments */
+  @media (max-width: 1087px) {
+    flex-direction: row;
+    gap: 2rem;
+
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  /* media query for mobile */
+  @media (max-width: 468px) {
+    flex-direction: column-reverse;
+    gap: 1rem;
   }
 }
 

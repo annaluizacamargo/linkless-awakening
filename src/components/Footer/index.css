@@ -37,7 +37,7 @@ footer button.fullscreen-button {
   padding: 0.5rem;
 }
 
-/* media query for mobile */
+/* media query for tablet and mobile */
 @media (max-width: 768px) {
   footer .footer-container p {
     font-size: 0.75rem !important;

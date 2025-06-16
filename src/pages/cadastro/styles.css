@@ -7,4 +7,28 @@
   box-shadow: 0 0 0.5rem rgba(88, 88, 88, 0.473);
   border: 2px solid #212732;
   max-width: 90%;
+
+  /* Responsive adjustments */
+  @media (max-width: 1087px) {
+    flex-direction: column;
+    align-items: center;
+    max-width: calc(100% - 2rem);
+  }
+
+  /* media query for mobile */
+  @media (max-width: 468px) {
+    min-width: calc(100% - 1rem);
+    max-width: calc(100% - 1rem);
+    width: calc(100% - 1rem);
+    padding: 2rem 0;
+  }
+}
+
+.grid-monsters-form-page {
+  padding: 2rem;
+
+  /* Responsive adjustments */
+  @media (max-width: 1087px) {
+    padding: 0 1rem 2rem;
+  }
 }

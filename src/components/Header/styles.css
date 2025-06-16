@@ -65,8 +65,8 @@ header.site-header {
   }
 }
 
-/* media query for mobile */
-@media (max-width: 768px) {
+/* Responsive styles */
+@media (max-width: 542px) {
   .site-header {
     width: 100%;
   }

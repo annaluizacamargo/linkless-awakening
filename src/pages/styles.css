@@ -45,7 +45,7 @@
   }
 }
 
-/* media query for mobile */
+/* media query for tablet and mobile */
 @media (max-width: 768px) {
   .dashboard-container-error {
     margin: 1rem;
