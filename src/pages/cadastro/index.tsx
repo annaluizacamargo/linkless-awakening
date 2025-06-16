@@ -1,11 +1,12 @@
 import { Box } from '@mui/material'
 import { DefaultMonster, MONSTERS_KEY } from '@utils/constants/Monsters'
 import { mockMonstersApiReturn } from '@utils/mocks/MonstersApiReturn'
-import { IMonster } from '@utils/types/monster.type'
+import { IMonster } from '@utils/types/monster.types'
 import { useEffect, useState } from 'react'
-import MonsterGrid from '@components/MonsterGrid'
-import MonsterForm from '@components/Forms/Monster'
+import MonsterGrid from '@components/Grid/AddMonsterPage'
+import MonsterForm from '@components/Panels/MonsterForm'
 import './styles.css'
+import { getLocalStorageMonsters } from '@utils/helpers/MonsterCost.helper'
 
 /**
  * MonstersForm Page Component
@@ -21,15 +22,7 @@ export default function MonstersForm(): React.JSX.Element {
 
   // Initial load from localStorage
   useEffect(() => {
-    const stored = localStorage.getItem(MONSTERS_KEY)
-
-    try {
-      const parsed = stored ? JSON.parse(stored) : []
-      setUserMonsters(Array.isArray(parsed) ? parsed : [])
-    } catch {
-      setUserMonsters([])
-    }
-
+    setUserMonsters(getLocalStorageMonsters())
     setLoaded(true)
   }, [])
 
