@@ -33,7 +33,7 @@ body {
 }
 
 .bold-text {
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
 .app {
@@ -57,7 +57,7 @@ body {
   max-width: 100% !important;
   padding: 1.5rem 3rem 4rem !important;
   box-sizing: border-box;
-  margin: 10rem 0 0;
+  margin: 9.5rem 0 0;
   position: relative;
 }
 

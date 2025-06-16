@@ -1,0 +1,84 @@
+.monster-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
+  border-radius: 8px;
+  flex: '0 0 21.25rem';
+  background: '#181818';
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.monster-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+
+  label {
+    color: #fff;
+  }
+
+  input {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #212732;
+    color: #fff;
+    padding: 0.75rem;
+  }
+
+  .monster-form-field {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .monster-form-field-label {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+
+    label {
+      width: fit-content;
+      min-width: fit-content;
+      text-align: left;
+    }
+
+    input {
+      padding: 0;
+      border: none;
+    }
+  }
+}
+
+button.monster-form-submit-button {
+  background-color: #608548;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:disabled {
+    background-color: #3a3a3a !important;
+    color: #888 !important;
+  }
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #608548 !important;
+}
+
+.MuiInputLabel-formControl.Mui-focused {
+  color: #608548 !important;
+}
+
+.Mui-disabled {
+  color: #bdbdbd !important;
+  -webkit-text-fill-color: #bdbdbd !important;
+}

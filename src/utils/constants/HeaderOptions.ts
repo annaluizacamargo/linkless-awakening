@@ -5,7 +5,7 @@
 export const HeaderOptions: HeaderOptionsType = {
   links: [
     {
-      label: 'Cadastro de Monstros',
+      label: 'Cadastro de Criaturas',
       path: '/cadastro',
       icon: '📋',
     },
