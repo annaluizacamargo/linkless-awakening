@@ -81,7 +81,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 0, 0, 0.6), transparent), #05070ade;
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 0, 0, 0.6), transparent), #05070ab0;
   pointer-events: none;
   z-index: 0;
 }
