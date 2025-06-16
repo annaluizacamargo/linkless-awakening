@@ -8,7 +8,7 @@ import {
   RocketOutlined,
   ShieldOutlined,
 } from '@mui/icons-material'
-import { IRatingFields } from '@utils/types/monster.type'
+import { IRatingFields } from '@utils/types/monster.types'
 
 /**
  * Rating fields configuration for the monster attributes with icons, colors, and tooltips.

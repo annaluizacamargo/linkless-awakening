@@ -1,6 +1,24 @@
+import { MONSTERS_KEY } from '@utils/constants/Monsters'
 import { RatingFields } from '@utils/constants/RatingFields'
 import { StatWeight } from '@utils/constants/StatWeight'
-import { IMonster } from '@utils/types/monster.type'
+import { IMonster } from '@utils/types/monster.types'
+
+/**
+ * Retrieves the list of monsters from localStorage.
+ * If the data is not in the correct format, it returns an empty array.
+ * @returns {IMonster[]} - An array of monsters retrieved from localStorage.
+ * @throws {Error} - Throws an error if the data cannot be parsed.
+ */
+export function getLocalStorageMonsters(): IMonster[] {
+  const stored = localStorage.getItem(MONSTERS_KEY)
+
+  try {
+    const parsed = stored ? JSON.parse(stored) : []
+    return Array.isArray(parsed) ? parsed : []
+  } catch {
+    return []
+  }
+}
 
 /**
  * Calculates the cost of a monster based on its attributes.
