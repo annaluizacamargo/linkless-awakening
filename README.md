@@ -1,6 +1,6 @@
-# 🐦‍🔥 Linkless Awakening - Batalha de Monstros
+# [🐦‍🔥 Linkless Awakening - Batalha de Monstros](https://linkless-awakening-game.vercel.app/)
 
-> Linkless Awakening é uma aplicação React + TypeScript que permite batalhas entre monstros, inspirado no clássico 🧝‍♀️🧝‍♂️ Zelda - Link's Awakening.
+> [Linkless Awakening](https://linkless-awakening-game.vercel.app/) é uma aplicação React + TypeScript que permite batalhas entre monstros, inspirado no clássico 🧝‍♀️🧝‍♂️ Zelda - Link's Awakening.
 
 ## 🗃️ Índice
 
@@ -27,12 +27,14 @@
 - **🎮 Batalhas de Monstros**: Os usuários podem criar monstros com atributos personalizados e batalhar entre si, visualizando o resultado e a evolução dos HPs em um gráfico.
 - **💾 Persistência Local**: Todos os monstros criados e a última batalha são salvos no navegador, permitindo que os usuários continuem de onde pararam.
 - **🖥 Interface Responsiva**: O layout é adaptado para desktop e mobile, com um visual escuro.
+- **🎶 Música de Ambiente**: Para você se sentir dentro desse universo, a autora selecionou sua música favorita do jogo: Overword para acompanhar nessa aventura
 - Tudo foi construído buscando o melhor resultado possível dentro do tempo estipulado para o desafio (3 dias), com foco na qualidade do código, boas práticas e uma experiência de usuário agradável.
 
 ---
 
 <h3 id="documentacao">📚 Documentações</h3>
 
+- 🔗 [Link do Projeto](https://linkless-awakening-game.vercel.app/)
 - 📖 [Documentação do Projeto (Notion)](https://flying-date-6d7.notion.site/Linkless-Awakening-Documenta-o-T-cnica-2145728f68a78085b166fa69c17a14f3)
 - 📘 Documentação oficial da linguagem:
   - [React.js 🔗](https://react.dev/)
