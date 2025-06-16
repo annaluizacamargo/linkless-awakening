@@ -28,7 +28,6 @@ export function calculateBattle(monsterA: IMonster, monsterB: IMonster): IBattle
 
   let first = a
   let second = b
-
   if (b.speed > a.speed) {
     // The monster with higher speed attacks first
     first = b
@@ -57,12 +56,9 @@ export function calculateBattle(monsterA: IMonster, monsterB: IMonster): IBattle
   let defenderHp = defender.hp
 
   while (attackerHp > 0 && defenderHp > 0) {
-    let damage = attacker.attack - defender.defense // Calculate damage based on attacker's attack and defender's defense
-
-    if (damage <= defender.defense) {
-      // If the damage is less than or equal to the defender's defense, it deals 1 damage
-      damage = 1
-    }
+    // Calculate damage based on attacker's attack and defender's defense
+    // If the attack is less than or equal to the defender's defense, it deals 1 damage
+    const damage = attacker.attack <= defender.defense ? 1 : attacker.attack - defender.defense
 
     defenderHp -= damage
 
