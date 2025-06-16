@@ -1,0 +1,80 @@
+.battle-arena-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #05070a96;
+  border-radius: 0;
+  box-shadow: 0 0 0.5rem rgba(88, 88, 88, 0.473);
+  flex: 1;
+  min-width: 24rem;
+  max-width: 100%;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.monster-selection-card {
+  flex: 1;
+  min-width: 7.5rem;
+  min-height: 11.25rem;
+  border-radius: 3;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+button.fight-button {
+  background-color: #bfa046;
+  color: #131313;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:disabled {
+    background-color: #3a3a3a !important;
+    color: #888 !important;
+  }
+}
+
+.battle-results-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0;
+  box-shadow: 0 0 0.5rem rgba(88, 88, 88, 0.473);
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 100%;
+  background: #05070a96 !important;
+  border-top: 2px solid #212732;
+}
+
+.battle-results {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.battle-result {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.battle-results-stats {
+  margin-top: 2rem;
+  padding: 2rem 0;
+  border-top: 2px solid #212732;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}

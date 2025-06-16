@@ -1,0 +1,23 @@
+.battle-arena-page {
+    display: flex;
+    align-items: flex-start;
+    background: #05070a96;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.5rem rgba(88, 88, 88, 0.473);
+    border: 2px solid #212732;
+    max-width: 90%;
+}
+
+.arena-container {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 2rem;
+
+    h4 {
+        color: #ffe9b0;
+        font-weight: 900;
+        text-shadow: 0 2px 8px #000a;
+    }
+}
