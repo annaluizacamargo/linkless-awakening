@@ -55,7 +55,7 @@ export default function Header(): React.JSX.Element {
                 underline="none"
                 className={HeaderOptions.getLinkClass(link.path)}
               >
-                {link.icon}
+                {link.icon} {link.smallLabel}
               </Link>
 
               {index < HeaderOptions.links.length - 1 && (

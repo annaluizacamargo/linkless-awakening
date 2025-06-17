@@ -8,11 +8,13 @@ export const HeaderOptions: HeaderOptionsType = {
       label: 'Cadastro de Criaturas',
       path: '/cadastro',
       icon: '📋',
+      smallLabel: 'Cadastro',
     },
     {
       label: 'Arena de Batalha',
       path: '/batalhas',
       icon: '⚔️',
+      smallLabel: 'Arena',
     },
   ],
   getLinkClass: (path: string): string => {
@@ -25,6 +27,7 @@ export type HeaderLink = {
   label: string
   path: string
   icon: string
+  smallLabel: string
 }
 
 type HeaderOptionsType = {

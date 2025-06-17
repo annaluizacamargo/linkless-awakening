@@ -77,7 +77,10 @@ header.site-header {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 0 1.5rem 0 3rem;
+    padding: 0 1.5rem;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    flex-wrap: wrap;
   }
 
   .logo {
@@ -88,11 +91,21 @@ header.site-header {
   .site-header-container {
     width: fit-content !important;
     border-left: 2px solid var(--background-default);
-    background-color: transparent;
-    box-shadow: none;
     border: none;
+    gap: 0.75rem;
     margin: 0.5rem 0 !important;
-    padding: 0.75rem 1.5rem !important;
+    padding: 0.5rem 1rem !important;
+    align-items: center;
+    background: transparent;
+    box-shadow: none;
+
+    a {
+      font-size: 0.75rem !important;
+    }
+
+    img {
+      margin: auto 0;
+    }
 
     &.mobile {
       display: flex;
